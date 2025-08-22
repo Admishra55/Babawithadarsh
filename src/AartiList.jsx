@@ -2,7 +2,7 @@ import React from 'react'
 import data from '../data/aartis_bhajans.json'
 function useSearch(list){
   const [query,setQuery]=React.useState(''); const [cat,setCat]=React.useState('सभी'); const [inLyrics,setInLyrics]=React.useState(true)
-  const cats = React.useMemo(()=>['सभी',...Array.from(new Set(list.map(x=>x.category||'अन्य')))],[list])
+  const cats = React.useMemo(()=>['सभी',...Array.from(new Set(list.map(x=>x.category||'अन्')))],[list])
   const results = list.filter(x=>{ const q=query.toLowerCase().trim(); const okCat=cat==='सभी'||(x.category||'अन्य')===cat; if(!q) return okCat; const inTitle=x.title.toLowerCase().includes(q); const inBody=inLyrics?(x.lyrics||'').toLowerCase().includes(q):false; return okCat && (inTitle||inBody) })
   return {query,setQuery,cat,setCat,inLyrics,setInLyrics,cats,results}
 }
