@@ -12,7 +12,7 @@ export default function AartiList(){
     <div className="grid">
       <div className="card grid grid-3">
         <input className="input" placeholder="खोजें (नाम/शब्द)" value={query} onChange={e=>setQuery(e.target.value)} />
-        <select className="select" value={cat} onChange={e=>etCat(e.target.value)}>{cats.map(c=><option key={c} value={c}>{c}</option>)}</select>
+        <select className="select" value={cat}  key={c} value={c}>{c}</option>)}</select>
         <label className="small" style={{display:'flex',alignItems:'center',gap:8}}><input type="checkbox" checked={inLyrics} onChange={e=>setInLyrics(e.target.checked)} /> Lyrics में भी खोजें</label>
       </div>
       <div className="list">
